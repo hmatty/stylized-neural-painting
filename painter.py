@@ -109,7 +109,7 @@ class PainterBase():
 
         return v
 
-    def _render(self, v, save_jpgs=True, save_video=True):
+    def _render(self, v, save_jpgs=True, save_video=False):
 
         v = v[0,:,:]
         if self.args.keep_aspect_ratio:
@@ -139,9 +139,9 @@ class PainterBase():
                 self.rderr.draw_stroke()
             this_frame = self.rderr.canvas
             this_frame = cv2.resize(this_frame, (out_w, out_h), cv2.INTER_AREA)
-            if save_jpgs:
-                plt.imsave(file_name + '_rendered_stroke_' + str((i+1)).zfill(4) +
-                           '.png', this_frame)
+          #  if save_jpgs:
+          #      plt.imsave(file_name + '_rendered_stroke_' + str((i+1)).zfill(4) +
+          #                 '.png', this_frame)
             if save_video:
                 video_writer.write((this_frame[:,:,::-1] * 255.).astype(np.uint8))
 
