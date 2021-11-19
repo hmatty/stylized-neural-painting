@@ -109,7 +109,7 @@ class PainterBase():
 
         return v
 
-    def _render(self, v, save_jpgs=True, save_video=False):
+    def _render(self, v, save_jpgs=True, save_video=True):
 
         v = v[0,:,:]
         if self.args.keep_aspect_ratio:
