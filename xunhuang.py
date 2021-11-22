@@ -95,5 +95,9 @@ def optimize_x(pt):
     
     
 
-pt = ProgressivePainter(args=args)
-final_rendered_image = optimize_x(pt)
+
+for p in range(101,107):
+  print (p)
+  args.img_path = '/content/drive/MyDrive/pic/' + str(p) + '.jpg' # path to input photo    
+  pt = ProgressivePainter(args=args)
+  final_rendered_image = optimize_x(pt)
